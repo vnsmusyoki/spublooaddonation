@@ -62,6 +62,10 @@ if (!isset($_SESSION['admin'])) {
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
+                        <a class="nav-link" href="reports.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Print Reports
+                        </a>
                         <div class="sb-sidenav-menu-heading">Interface</div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
                             aria-expanded="false" aria-controls="collapseLayouts">

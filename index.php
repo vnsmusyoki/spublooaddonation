@@ -4,9 +4,9 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Home -2 Blood Donation Campaign & Multi-Concept Activism Template</title>
+        <title>Home -Damu Connect</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta name="description" content="Reddrop Buddies - Blood Donation Campaign & Multi-Concept Activism Template">
+        <meta name="description" content="dAMU CONNECT">
         <meta name="author" content="xenioushk">
         <link rel="shortcut icon" href="images/favicon.png" />
 
@@ -73,73 +73,39 @@
                             <a class="logo" href="index.html"><img alt="" src="images/logo.png"></a>
                         </div>
 
-                        <!--<div class="navbar-collapse collapse">
+                    <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
                                     <a href="#">Home</a>
-                                    <ul class="drop-down">
-                                        <li><a href="index.html" title="Home Layout 01">Home 01</a></li>
-                                        <li><a href="home-2.html" title="Home Layout 02">Home 02</a></li>
-                                    </ul>
                                 </li>
                                 
-                                <li><a href="about-us.html" title="About Us">About Us</a></li>
+                                <li><a href="#" title="About Us">About Us</a></li>
 
                                 <li>
-                                    <a href="#">Campaign</a>
-                                    <ul class="drop-down">
-                                        <li><a href="events.html">All Campaigns</a></li>
-                                        <li><a href="event-single.html">Single Campaign</a></li>
-                                    </ul>
-                                </li>
+                                    <a href="#ourcampaigns">Our Campaigns</a>
+                                 </li>
 
-                                <li class="drop"><a href="#">Pages</a>
+                                <li class="drop"><a href="#">Donor Registration</a>
                                     <ul class="drop-down">
-                                        
-                                        <li class="drop"><a href="#">Elements</a>
-                                            <ul class="drop-down level3">
-                                                <li><a href="element-cta.html">CTA/PROMO BOX</a></li>
-                                                <li><a href="element-counter.html">Fun Facts</a></li>
-                                                <li><a href="element-logos.html">Logos/Clients</a></li>
-                                                <li><a href="element-process.html">Process</a></li>
-                                                <li><a href="element-highlights.html">Highlights Box</a></li>
-                                                <li><a href="element-service.html">Services</a></li>
-                                                <li><a href="element-subscribe.html">Subscribe</a></li>
-                                                <li><a href="element-team.html">Team</a></li>
-                                                <li><a href="element-feedback.html">Testimonials</a></li>
-                                            </ul>
-                                        </li>
+                                        <li><a href="#join-heading join-heading-alt" title="SignUp">SignUp</a></li>
+                                        <li class="drop"><a href="#">Gallery</a></li>
+                                        <li><a href="#" title="FAQ">FAQ</a></li>
                                        
-                                        <li class="drop"><a href="#">Gallery</a>
-                                            <ul class="drop-down level3">
-                                                <li><a href="gallery-1.html">Layout 01</a></li> 
-                                                <li><a href="gallery-2.html">Layout 02</a></li> 
-
-                                            </ul>
-                                        </li>
-                                         <li><a href="faq.html" title="FAQ">FAQ</a></li>
-                                        <li><a href="404.html" title="404 Page">404 Page</a></li> 
-                                        <li class="drop"><a href="#">Level 3</a>
-                                            <ul class="drop-down level3">
-                                                <li><a href="#">Level 3.1</a></li>
-                                                <li><a href="#">Level 3.2</a></li>
-                                                <li><a href="#">Level 3.3</a></li>
-                                            </ul>
-                                        </li>
                                     </ul>
                                 </li>
 
                                 <li>
-                                    <a href="#">Blog</a>
+                                    <a href="#">LOGIN</a>
                                     <ul class="drop-down">
-                                        <li><a href="blog.html">All Posts</a></li> 
-                                        <li><a href="single.html">Single Page</a></li>
+                                        <li><a href="donor/">Donor Login</a></li>
+                                        <li><a href="staff/">Staff Login</a></li>
+                                        <li><a href="admin/">Admin Login</a></li>
                                     </ul>
                                 </li>
 
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="#">Contact Us</a></li>
                             </ul>
-                        </div> -->
+                        </div> 
                     </div>
                 </div>
 
@@ -163,7 +129,7 @@
                                 Donating blood not only saves the life also save donor's lives.
                             </h3>
 
-                            <a href="#" class="btn btn-theme margin-top-32">DONATE TODAY</a>
+                            <a href="#" class="btn btn-theme margin-top-32"></a>
                         </div>
                     </div> <!-- end .col-md-12  -->
                 </div>
@@ -174,7 +140,7 @@
 
         <!--  SECTION DONATION PROCESS -->
 
-        <section class="section-content-block section-process">
+        <section class="section-content-block section-process" id="donationprocess">
 
             <div class="container">
 
@@ -274,7 +240,7 @@
         
         <!--  SECTION CAMPAIGNS   -->
 
-        <section class="section-content-block section-secondary-bg" >
+        <section class="section-content-block section-process" id="ourcampaigns" >
 
             <div class="container">
 
@@ -431,42 +397,107 @@
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 margin-top-appointment-reverse"> 
 
                         <div class="appointment-form-wrapper theme-custom-box-shadow text-center clearfix wow zoomIn">
-                            <h3 class="join-heading join-heading-alt">Request Appointment</h3>
-                            <form class="appoinment-form"> 
+                            <h3 class="join-heading join-heading-alt">Create Account Today</h3>
+                            <form class="appoinment-form" method="POST" autocomplete="off"> 
+                            <?php
+                                if (isset($_POST['btn_submit'])) {
+                                    $conn = mysqli_connect('localhost', 'root', '', 'blooddonation');
+                                    $fullnames = mysqli_real_escape_string($conn, $_POST['names']);
+                                    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+                                    $idnumber = mysqli_real_escape_string($conn, $_POST['idnumber']);
+                                    $email = mysqli_real_escape_string($conn, $_POST['email']);
+                                    $gender = mysqli_real_escape_string($conn, $_POST['gender']);
+                                    $county = mysqli_real_escape_string($conn, $_POST['county']);
+                                    $dates = mysqli_real_escape_string($conn, $_POST['dates']);
+                                    $bloodgroup = mysqli_real_escape_string($conn, $_POST['bloodgroup']);
+                                    $idlength = strlen($idnumber);
+                                    $phonelength = strlen($idnumber);
+                                    if (empty($dates) || empty($bloodgroup) || empty($county) || empty($gender) || empty($email) || empty($idnumber) || empty($fullnames) || empty($phone)) {
+                                        echo "<script>alert('provide required details');</script>";
+                                    } else if (!preg_match("/^[a-zA-z ]*$/", $fullnames)) {
+                                        echo "<script>alert('provide required   details using letters only');</script>";
+                                    }else {
+
+                                        $insert = "INSERT INTO `donor`(`donor_name`, `donor_dob`, `donor_gender`, `donor_telephone_number`, `donor_email`, `donor_national_id`, `donor_county`, `donor_blood_group_id`) VALUES ('$fullnames', '$dates', '$gender', '$phone', '$email', '$idnumber', '$county', '$bloodgroup') ";
+                                        $querys = mysqli_query($conn, $insert);
+                                        if ($querys) {
+                                            $staff = "SELECT * FROM `donor` WHERE `donor_name`='$fullnames' AND `donor_national_id`='$idnumber' AND `donor_telephone_number`='$phone'";
+                                            $checkstaff = mysqli_query($conn, $staff);
+                                            while($fetch= mysqli_fetch_assoc($checkstaff)){
+                                                $staffid = $fetch['donor_id'];
+                                                $password = md5($idnumber);
+                                               $addlogin = "INSERT INTO `login`(`login_user_name`, `login_password`, `login_admin_id`, `login_donor_id`, `login_staff_id`) VALUES ('$email', '$password', '000', '$staffid', 000)";
+                                                $checklogin =  mysqli_query($conn, $addlogin);
+
+                                                if($checklogin){
+                                                    echo "<script>window.location.href='donor/';</script>";
+                                                }
+                                            }
+                                            
+                                        }
+                                    }
+                                }
+                                ?>
                                 <div class="form-group col-md-6">
-                                    <input id="your_name" class="form-control" placeholder="Name" type="text">
+                                    <input id="your_name" class="form-control" placeholder="Name" type="text" name="names" required>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <input id="your_email" class="form-control" placeholder="Email" type="email">
+                                    <input id="your_email" class="form-control" placeholder="Email" type="email" name="email" required >
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <input id="your_phone" class="form-control" placeholder="Phone" type="text">
+                                    <input name="phone" class="form-control" placeholder="Phone" type="number" min="0700000001" max="07999999999">
                                 </div>
+                                
+                                <div class="form-group col-md-6" style="margin-bottom: 2rem !important;;">
+                                <input name="idnumber" class="form-control" placeholder="ID Number" type="number" min="100000" max="99999999">
+                                </div>
+                                <br>
+                                <br>
+                                <div style="height: 2rem !important;"> </div>
+                                <div class="form-group col-md-6">
+                                    <input class="form-control" placeholder="Date of Birth" type="date" name="dates" required>
+                                </div>
+
+                               
                                 <div class="form-group col-md-6">
                                     <div class="select-style">                                    
-                                        <select class="form-control" name="your_center">
-                                            <option>Donation Center</option>
-                                            <option>Los Angles</option>
-                                            <option>California</option>
-                                        </select>
+                                        <select name="bloodgroup" id="" class="form-control">
+                                                <option value="">select blood group</option>
+                                                <?php
+                                                $conn = mysqli_connect('localhost', 'root', '', 'blooddonation');
+                                                $data = "SELECT * FROM `blood_group`";
+                                                $query = mysqli_query($conn, $data);
+                                                while ($fetch = mysqli_fetch_assoc($query)) {
+                                                    $name = $fetch['blood_group_name'];
+                                                    echo "<option value='$name'> $name</option>";
+                                                }
+                                                ?>
+                                                ?>
+                                            </select>
                                     </div>
                                 </div>
+                                <section style="height: 2vh !important;"></section>
 
                                 <div class="form-group col-md-6">
-                                    <input id="your_date" class="form-control" placeholder="Date" type="text">
+                                    <input id="your_date" class="form-control" placeholder="County" type="text" name="county" required>
+                                </div>
+                                
+
+                                <div class="form-group col-md-6 mt-4"> 
+                                 <div class="select-style">
+                                 <select name="gender" id="" class="form-control" required>
+                                    <option value="">select gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    </select>
+                                 </div>
+                                    
                                 </div>
 
-
-                                <div class="form-group col-md-6">
-                                    <input id="your_time" class="form-control" placeholder="Time" type="text">
-                                </div>
+                                         
 
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <textarea id="textarea_message" class="form-control" rows="4" placeholder="Your Message..."></textarea>
-                                </div>         
-
-                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <button id="btn_submit" class="btn btn-theme" type="submit">Get Appointment</button>
+                                    <button name="btn_submit" class="btn btn-theme" type="submit">Get Donor Account Today</button>
                                 </div>
 
                             </form>

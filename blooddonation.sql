@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2021 at 10:52 PM
+-- Generation Time: Feb 17, 2021 at 07:46 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -97,6 +97,13 @@ CREATE TABLE `donation_drive` (
   `donation_institution_id` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `donation_drive`
+--
+
+INSERT INTO `donation_drive` (`donation_drive_id`, `donation_drive_date`, `donation_drive_location`, `donation_drive_name`, `donation_drive_desc`, `donation_institution_id`) VALUES
+(2, '2021-02-23', 'kirinyaga', 'covid blood donation drive', 'aimed at helping lives in diffrent hospitals', 'nyeri hospital');
+
 -- --------------------------------------------------------
 
 --
@@ -120,7 +127,10 @@ CREATE TABLE `donor` (
 --
 
 INSERT INTO `donor` (`donor_id`, `donor_name`, `donor_dob`, `donor_gender`, `donor_telephone_number`, `donor_email`, `donor_national_id`, `donor_county`, `donor_blood_group_id`) VALUES
-(2, 'elijah elijah', '2021-01-31', 'Male', '0721216677', 'father1@gmail.com', '98765437', 'makueni', '0 negatve');
+(2, 'elijah elijah', '2021-01-31', 'Male', '0721216677', 'father1@gmail.com', '98765437', 'makueni', '0 negatve'),
+(4, 'charles donor', '2021-02-24', 'Male', '0799009900', 'charlesdonor@gmail.com', '12341234', 'muranga', '0 negatve'),
+(5, 'donor two', '2021-03-03', 'Male', '0787654378', 'donortwo@gmail.com', '87654321', 'kirinyaga', '0 negatve'),
+(6, 'main', '2021-02-01', 'Male', '0729292929', 'mains@gmail.com', '89898989', 'kirinyaga', '0 negatve');
 
 -- --------------------------------------------------------
 
@@ -140,7 +150,8 @@ CREATE TABLE `institution` (
 --
 
 INSERT INTO `institution` (`institution_id`, `institution_name`, `institution_location`, `institution_desc`) VALUES
-(2, 'kenya', 'located in naironi', 'this is the first and oldes blood donation site in our country');
+(2, 'kenya', 'located in naironi', 'this is the first and oldes blood donation site in our country'),
+(3, 'nyeri hospital', 'nyeri county', 'located at nyeri town opposite nyeri police station');
 
 -- --------------------------------------------------------
 
@@ -164,7 +175,9 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`login_id`, `login_user_name`, `login_password`, `login_admin_id`, `login_donor_id`, `login_staff_id`) VALUES
 (1, 'admin', '5f4dcc3b5aa765d61d8327deb882cf99', '1', '0', '0'),
 (2, 'father1@gmail.com', '25d55ad283aa400af464c76d713c07ad', '000', '000', '2'),
-(3, 'joshua@gmail.com', '25d55ad283aa400af464c76d713c07ad', '000', '000', '3');
+(3, 'joshua@gmail.com', '25d55ad283aa400af464c76d713c07ad', '000', '000', '3'),
+(6, 'donortwo@gmail.com', '5e8667a439c68f5145dd2fcbecf02209', '000', '5', '0'),
+(7, 'mains@gmail.com', 'dfc3be9ec93ee1aaac492925ef4e8924', '000', '6', '0');
 
 -- --------------------------------------------------------
 
@@ -270,25 +283,25 @@ ALTER TABLE `blood_group`
 -- AUTO_INCREMENT for table `donation_drive`
 --
 ALTER TABLE `donation_drive`
-  MODIFY `donation_drive_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `donation_drive_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `donor`
 --
 ALTER TABLE `donor`
-  MODIFY `donor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `donor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `institution`
 --
 ALTER TABLE `institution`
-  MODIFY `institution_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `institution_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `login_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `login_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `staff`

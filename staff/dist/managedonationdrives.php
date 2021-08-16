@@ -15,7 +15,7 @@ if (!isset($_SESSION['admin'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title> Admin | Blood DOnation</title>
+    <title> Staff | Blood DOnation</title>
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous">
@@ -26,7 +26,7 @@ if (!isset($_SESSION['admin'])) {
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="dashboard.php">Admin Dashboard</a>
+        <a class="navbar-brand" href="dashboard.php">Staff Dashboard</a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -50,87 +50,7 @@ if (!isset($_SESSION['admin'])) {
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                <div class="sb-sidenav-menu">
-                    <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="dashboard.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Dashboard
-                        </a>
-                        <div class="sb-sidenav-menu-heading">Interface</div>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Alerts
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="allalerts.php">All Alerts</a>
-                            </nav>
-                        </div>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Blood Groups
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="addnewbloodgroup.php">Add new Blood Group</a>
-                                <a class="nav-link" href="managebloodgroups.php">Manage Blood Groups</a>
-                            </nav>
-                        </div>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Donation Drives
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="addnewdonationdrive.php">Add new </a>
-                                <a class="nav-link" href="managedonationdrives.php">Manage Donation Drives</a>
-                            </nav>
-                        </div>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Donors
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="addnewdonor.php">Add new Donor</a>
-                                <a class="nav-link" href="managedonors.php">Manage Donors </a>
-                            </nav>
-                        </div>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Insitutions
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="addnewinstitution.php">Add new Institution</a>
-                                <a class="nav-link" href="manageinstitutions.php">Manage Institutions </a>
-                            </nav>
-                        </div>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Staff
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="addnewstaff.php">Add new Staff</a>
-                                <a class="nav-link" href="managestaff.php">Manage Staff Members </a>
-                            </nav>
-                        </div>
-
-
-
-                    </div>
-                </div>
-
-            </nav>
+        <?php include_once 'sidebar.php'; ?>
         </div>
         <div id="layoutSidenav_content">
             <main>

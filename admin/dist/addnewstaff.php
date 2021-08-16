@@ -226,7 +226,7 @@ if (!isset($_SESSION['admin'])) {
                                     } else if (!preg_match("/^[a-zA-z ]*$/", $fullnames)) {
                                         echo "<script>alert('provide required   details using letters only');</script>";
                                     }else {
-
+  
                                         
                                         $insert = "INSERT INTO `staff`(`staff_name`, `staff_national_id`, `staff_sex`, `staff_dob`, `staff_phone_number`, `staff_email`, `staff_role`, `staff_ institution_id`) VALUES ('$fullnames', '$idnumber', '$gender', '$dates', '$phone', '$email', '$duties', '$institution')";
                                         $querys = mysqli_query($conn, $insert);

@@ -131,12 +131,12 @@ if(!isset($_SESSION['admin'])){
                 <main>
                     <div class="container-fluid">
                     <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-2 col-xs-1"></div>
-                    <div class="col-lg-6 col-md-6 col-sm-8 col-xs-10 py-4">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 py-4">
                     <form style="background-color:white;padding:2rem 1rem;margin-top:5rem;" method="POST" action="">
-                    <center><h4>Add new Blood GROUP HERE</h4></center>
+                    <center><h4>Add new donation drive here</h4></center>
                     <hr>
-                    <div class="form-row">
+                    <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputFirstName">Date Scheduled</label>
@@ -155,7 +155,7 @@ if(!isset($_SESSION['admin'])){
                                                     while($fetch = mysqli_fetch_assoc($query)){
                                                         $name = $fetch['institution_name']; 
                                                         $record = $fetch['institution_id'];
-                                                        echo "<option value='$name'> $name</option>";
+                                                        echo "<option value='$name'>$name</option>";
                                                     }
                                                 ?>
                                         </select>
@@ -168,14 +168,13 @@ if(!isset($_SESSION['admin'])){
                                             </div> 
                                            
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputEmailAddress">Location of Event</label>
-                                                 
-                                                <textarea name="location" id=""class="form-control py-4" cols="30" rows="5"></textarea>
+                                                <label class="small mb-1" for="inputEmailAddress">Location(county)</label>
+                                                <input class="form-control py-4" id="inputEmailAddress" type="text"  name="location" /> 
                                             </div> 
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputEmailAddress">Donation Description</label>
                                                  
-                                                <textarea name="description" id=""class="form-control py-4" cols="30" rows="10"></textarea>
+                                                <textarea name="description" id=""class="form-control py-4" cols="30" rows="10" placeholder="describe the precise location of the donation schedule and any other relevant data to the donors"></textarea>
                                             </div> 
                                              <button type="submit" class="btn btn-primary btn-block" name="uploadgroup">Upload Donation Drive</button>
                                              <?php

@@ -164,7 +164,7 @@ $data = "SELECT * FROM `donor` WHERE `donor_id` = '$record'";
                         <div class="col-lg-6 col-md-6 col-sm-8 col-xs-10 py-4">
                             <form style="background-color:white;padding:2rem 1rem;margin-top:5rem;" method="POST" action="">
                                 <center>
-                                    <h4>Add new donor</h4>
+                                    <h4>Edit Donor</h4>
                                 </center>
                                 <hr>
                                 <div class="form-group">

@@ -139,7 +139,7 @@ if(!isset($_SESSION['admin'])){
                                            
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputEmailAddress">Blood Group Name</label>
-                                                <input class="form-control py-4" id="inputEmailAddress" type="text"  name="bloodgroupname" aria-describedby="emailHelp" placeholder="Enter email address" />
+                                                <input class="form-control py-4" id="inputEmailAddress" type="text"  name="bloodgroupname" aria-describedby="emailHelp" placeholder="Enter blood group" />
                                             </div> 
                                            
                                             <div class="form-group">
